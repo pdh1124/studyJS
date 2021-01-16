@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        a {color: blue;}
+    </style>
+</head>
+<body>
+    <!--프로그래밍에서 반복문이란 어떤 특정 코드 블럭을 반복적으로 실행하기 위한 문법으로, 자바스크립트에서 무언가를 반복적으로 실행하는 방법에는 여러가지가 있습니다.-->
+    <h1><a href="#">WEB 다크 모드/라이트 모드</a></h1>
+    <p></p>
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black'
+        target.style.color = 'white'
+        this.value = 'day'
+        // 반복문을 넣어서 a태그에 컬러를 변경
+        // 모든 a태그를 선택해 하나하나 반복해 모든 a태그를 불러와 컬러를 적용함
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+            console.log(alist[i]);
+            alist[i].style.color = 'powderblue';
+            i = i + 1;
+        }
+    } else {
+        target.style.backgroundColor = 'white'
+        target.style.color = 'black'
+        this.value = 'night'
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+            console.log(alist[i]);
+            alist[i].style.color = 'blue';
+            i = i + 1;
+        }
+    }
+    ">
+    <p></p>
+    <h3>다른 사이트 이동</h3>
+    <ul>
+        <li>1.<a href="#"> ex1.html</a></li>
+        <li>2.<a href="#"> ex2.html</a></li>
+        <li>3.<a href="#"> variable.html</a></li>
+    </ul>
+    <h2>What is Lorem Ipsum?</h2>
+    <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</body>
+</html>
