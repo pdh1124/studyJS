@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(Object)</title>
+</head>
+<script>
+
+    //Body라는 변수에 객체를 담음
+    var Body = {
+        setColor:function(color){
+            document.querySelector('body').style.color = color
+        },
+        setBackgorundColor:function(color) {
+        document.querySelector('body').style.backgroundColor = color
+        }
+    }
+    // 모든 텍스트의 컬러를 수정하는 함수
+    // function BodySetColor(color) {
+    //     document.querySelector('body').style.color = color
+    //}
+    // 바디에 백그라운드 컬러를 수정하는 함수
+    // function BodySetBackgorundColor(color) {
+    //     document.querySelector('body').style.backgroundColor = color
+    // }
+    //Body.을 이용해 객체를 간소화 함
+
+    //Links도 객체로 만듦
+    var Links = {
+        setColor:function(color){
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+            console.log(alist[i]);
+            alist[i].style.color = color;
+            i = i + 1;
+        }
+    }
+}
+    // 링크의 컬러를 수정하는 함수
+    // function LinksSetColor(color) {
+    //     var alist = document.querySelectorAll('a');
+    //     var i = 0;
+    //     while (i < alist.length) {
+    //         console.log(alist[i]);
+    //         alist[i].style.color = color;
+    //         i = i + 1;
+    //     }
+    // }
+    
+    function nightDayHandler(self) {
+        var target = document.querySelector('body');
+        if (self.value === 'night') {
+            Body.setBackgorundColor('black');
+            Body.setColor('white')
+            self.value = 'day'
+
+            Links.setColor('red');
+        } else {
+            Body.setBackgorundColor('white')
+            Body.setColor('black')
+            self.value = 'night'
+
+            Links.setColor('blue');
+        }
+    }
+</script>
+
+<body>
+    <h1>Object - 객체</h1>
+    <p>함수와 클래스로 툴을 만듦</p>
+    <p>툴에서 오브젝트(객체 또는 개체)를 하나하나 찍어냄</p>
+    <input type="button" value="night" onclick="nightDayHandler(this)">
+    <p></p>
+    <h3>다른 사이트 이동</h3>
+    <ul>
+        <li>1.<a href="#"> ex1.html</a></li>
+        <li>2.<a href="#"> ex2.html</a></li>
+        <li>3.<a href="#"> variable.html</a></li>
+    </ul>
+
+    <h2>Create</h2>
+    <script>
+        // 객체 만들기
+        var coworkers = {
+            "programmer": "park",
+            "designer": "kim"
+        };
+        // 객체를 띄우기
+        document.write("programmer : " + coworkers.programmer + "<br>");
+        document.write("designer : " + coworkers.designer + "<br>");
+        // 객체 추가
+        coworkers.bookkeeper = "lee";
+        document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+        // 객체 추가 하는데 띄어쓰기가 있을경우 []를 쓴다.
+        coworkers["data scientist"] = "choi";
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+    </script>
+
+    <h2>Iterate(반복)</h2>
+    <script>
+        // for는 coworkers에 객체에 있는 키값들을 가져오는 반복문 
+        // coworkers의 키값은 programmer,designer,bookkeeper,data scientist다
+        for (var key in coworkers) {
+            document.write(key + ' : ' + coworkers[key] + '<br>');
+        }
+    </script>
+    <h2>Property(객체에 소속된 변수) & Method(객체에 소속된 함수)</h2>
+    <script>
+        coworkers.showAll = function() {
+            for (var key in this) {
+                document.write(key + ' : ' + this[key] + '<br>');
+            } 
+        }
+        coworkers.showAll();
+    </script>
+</body>
+
+</html>
