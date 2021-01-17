@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정리정돈</title>
+    <style>
+        a {color: blue;}
+    </style>
+    <!-- 스크립트를 파일로 분리해 보기좋고 수정하기 편하게 수정 -->
+    <script src="colors.js"></script>
+</head>
+<body>    
+    <h1><a href="#">WEB 다크 모드/라이트 모드</a></h1>
+    <p></p>
+    <input type="button" value="night" onclick="nightDayHandler(this)">
+    <p></p>
+    <h3>다른 사이트 이동</h3>
+    <ul>
+        <li>1.<a href="#"> ex1.html</a></li>
+        <li>2.<a href="#"> ex2.html</a></li>
+        <li>3.<a href="#"> variable.html</a></li>
+    </ul>
+    <h2>Function(함수)</h2>
+    <h2>Basic(문법)</h2>
+    <ul>
+        <script>
+            function two() {
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+            document.write('<li>1</li>');
+            two();
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+    <h2>Parameter & Argument(매개 변수 & 인수)</h2>
+</body>
+</html>
