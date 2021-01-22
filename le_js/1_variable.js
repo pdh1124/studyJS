@@ -1,6 +1,7 @@
 'use strict';
 
-//1. Variable 변수
+//1. Variable 변수 
+//rw(read/wirte) : 변수의 경우 읽기와 쓰기가 가능함으로 변수를 지정하고 변경할 수 있는것이 이때문
 //변경될 수 있는 값
 //let (added in ES6에 추가 됨)
 
@@ -33,7 +34,7 @@ console.log(name);
 //age = 4;
 
 //자바스크립트에서는 이상하게 적용될 수 있다.
-//변수를 선언하고 나서 할당하는게 정상적인데 선언도 하지전에 값을 할당할 수 있고,
+//변수를 선언하고 나서 할당하는게 정상적인데 선언도 하기 전에 값을 할당할 수 있고,
 //할당하기 전에 출력을 할 수도 있음
 //이것을 var hoisting(바 호이스팅)이라고 한다.
 //console.log(age);
@@ -51,23 +52,36 @@ console.log(name);
 
 
 
-//2. constansts(상수)
-//한번 선언하면 절대 변하지 않는 값
+//2. constansts(상수) 
+//r(raed only) : 읽기만 가능하고 쓰기가 불가능 그래서 변경 불가능
+//한번 선언하면 절대 변하지 않는 값, 자바스크립트에 변수값이 변경해야할 이유가 없다면 const를 이용하는게 바람직함
 // - 좋은이유
 //  (1) 보안상으로 좋다.
 //  (2) 다양한 쓰레드들이 접근할때 변할수도 있는 것을 막아줌
 //  (3) 나중에 코드를 변경할때나 다른 개발자가 수정할때 실수를 줄일 수 있다.
 const daysInWeek = 7;
+// daysInWeek = 8;라고 변경이 불가능
+
+const eilie = {name: '엘리', age: 21};
+eilie.name = '알리';
+console.log(eilie.name);
+//상수의 name과 age 등 변경이 가능함
+
+
+// note!!!
+// Immutable data types: 데이터 자체를 변경하지 못함
+// Mutable date types: 변경이 가능한 데이터 =
 
 
 
 
 //3. Variable types (변수 타입)
-//어떤 프로그래밍 타입은 promotive 타입과 object 타입으로 나뉜다.
-//promotive 타입은 더이상 작은 단위로 나눠질수 없는 한가지 아이템
+//어떤 프로그래밍 타입은 primitive 타입과 object 타입으로 나뉜다.
+//primitive 타입은 더이상 작은 단위로 나눠질수 없는 한가지 아이템
+//primitive은 값 자체가 메모리에 저장됨
 //number, string, boolean, null, undefiedn, symbol
 
-//promotive - 1.number
+//primitive - 1.number
 const count = 17; //integer(정수)
 const size = 17.1; //decimal number(소수점)
 console.log(`value: ${count}, type: ${typeof count}`);
@@ -81,7 +95,7 @@ console.log(negativeInfinity); //-Infinity
 console.log(nAn); //NaN
 
 
-//promotive - 2.string
+//primitive - 2.string
 const char = 'c'; //한가지 글자
 const brendan = 'brendan'; //여러개 글자
 const greeting = 'hello ' + brendan; //글자와 변수
@@ -93,7 +107,7 @@ console.log('value: ' + helloBob + ', type: ' + typeof helloBob);
 
 
 
-//promotive - 3.boolean
+//primitive - 3.boolean
 // false: 0, null. indefined, NaN, ''
 // true: any other value, 어떤 값들
 const canRead = true;
@@ -103,14 +117,14 @@ console.log(`value ${test}, type: ${typeof test}`);
 
 
 
-//promotive - 4.null
+//primitive - 4.null
 //null이 라는 경우는 너는 아무것도 아니라고 지정한다는 값을 할당 받음
 let nothing = null;
 console.log(`value ${nothing}, type: ${typeof nothing}`);
 
 
 
-//promotive - 5.undefined
+//primitive - 5.undefined
 //선언은 되어있지만 아무 값도 지정되어 있지 않은 상태
 let x;
 let y = undefined;
@@ -130,7 +144,12 @@ console.log(symbol1 === symbol2); //false
 
 
 //object타입은 싱글 아이템들을 여러개 묶여서 한단위로 한 박스로 관리할수 있게 해주는것
+//
 const ellie = {name: 'ellie', age: 20};
+//ellie 는 다른 오브젝트로 할당이 불가능 하지만
+//오브젝트 안에는 name과 age라는 변수가 존재해 name과 age는 다른값으로 할당이 가능함
+ellie.age = 21;
+//수정 가능
 
 
 //fubction도 데이터 타입중에 하나인데요. 
