@@ -81,6 +81,7 @@ console.log(eilie.name);
 //primitive은 값 자체가 메모리에 저장됨
 //number, string, boolean, null, undefiedn, symbol
 
+
 //primitive - 1.number
 const count = 17; //integer(정수)
 const size = 17.1; //decimal number(소수점)
