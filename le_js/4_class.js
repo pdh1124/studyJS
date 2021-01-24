@@ -1,5 +1,5 @@
 'use strict';
-
+console.clear();
 //class와 objact
 /*
 class는 붕어빵을 만드는 틀과 같은 느낌

@@ -1,4 +1,5 @@
 'use strict';
+console.clear();
 //연산·반복문
 
 //1. String concatenation (문자열 덧셈)
