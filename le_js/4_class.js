@@ -111,4 +111,64 @@ class Article {
 
 const article1 = new Article(1);
 const article2 = new Article(2);
-console.log(article1.publisher);
+console.log(article1.publisher); //undefined
+//article1.publisher는 값이 지정되지 않았다.
+console.log(Article.publisher);
+Article.printPublisher();
+
+
+
+//상속과 다양성
+class Shape { //Shape = 도형
+    constructor(width, height, color) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
+
+    draw() {
+        console.log(`drawing ${this.color} color of`)
+    }
+
+    getArea() {
+        return this.width * this.height;
+    }
+}
+
+const shape = new Shape(20, 20, 'red');
+shape.draw();
+
+//Rectangle이라는 클래스를 만들고 싶다면 extends라는 키워드를 이용해 Shape클래스를 연장한다.
+class Rectangle extends Shape {} //직사각형
+//이렇게만 정의해도 Rectangle 안에 Shape에 정의했던 필드와 메소드가 자동적으로 포함됨
+const rectangle = new Rectangle(20, 20, 'blue');
+rectangle.draw();
+console.log(rectangle.getArea());
+
+class Triangle extends Shape {//Triangle = 삼각형 
+    //오버라이딩 : 필요한 메소드만 꺼내어 바꿀수 있음
+    //대신 오버라이딩을 했을때 기존에 정의했던 메소드는 지워짐
+    getArea() {
+        return this.width * this.height / 2;
+    }
+    //오버라이딩한 기존 정의했던 메소드까지 불러오고 싶다면
+    draw() {
+        super.draw(); //super(부모의).draw를 실행시켜라
+        console.log('삼각형');
+    }
+
+} 
+const triangle = new Triangle(20, 20, 'yellow');
+triangle.draw();
+console.log(triangle.getArea());
+
+
+
+
+//instanceOf 오퍼레이터
+//왼쪽에 있는 오브젝트가 오른쪽에 있는 class를 이용해서 만들어진지 아닌지 확인할때.
+console.log(rectangle instanceof Rectangle);
+console.log(triangle instanceof Rectangle);
+console.log(triangle instanceof Triangle);
+console.log(triangle instanceof Shape);
+console.log(triangle instanceof Object);
