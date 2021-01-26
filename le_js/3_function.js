@@ -209,3 +209,71 @@ const addArrow = (a, b) => a + b;
     console.log('IIFE');
 })();
 //()로 함수를 감싸고 ();처럼 함수를 호출하면 됨
+
+
+/*함수 기본 정렬 */
+/*
+어떤 언어든 2가지만 이해하면 됨
+함수를 선언하는 것과 함수를 호출하는 것
+*/
+
+//함수 선언
+/*
+function[함수를 선언한다고 지정함] doSomething[원하는 이름의 함수를 지정함] ()[소괄호 안에는 우리가 어떤 값을 전달 받아 올껀지 전달 받는 인자를 정리하는 부분과] {
+    console.log('hello'); [함수안에 작동될 코드]
+}[중괄호는 실제로 함수안에서 어떤 코드가 동작하는지 코드를 작성하는 부분으로 나눠짐]
+*/
+
+//함수 호출
+/*
+doSomething(); [함수를 호출할때는 함수의 이름을 적고 소괄호를 넣어 함수를 실행한다.]
+*/
+
+
+/*
+그리고 함수는 2가지 타입이 있는데 하나는 어떤 기능을 수행하고 그냥 끝나는 함수가 있고
+또는 어떠한 계산을 한다음에 특정한 값을 전달하는 함수가 있다.
+*/
+
+/*
+function add(a, b) [소괄호 안에는 a와 b라는 특정한 인자값들을 받아와서 코드를 수행함] {
+    const sum = a + b; [그래서 a와 b의 값을 더한다음에 sum 이라는 변수에 할당한다.]
+    return sum; [return을 해주지 않으면 sum을 계산하고 전달하지 않음 그래서 return을 넣어 계산한 sum값을 전달함]
+}
+*/
+//함수 호출
+/*
+const result = add(1, 2); [a와 b에 1과 2라는 값을 add함수에 삽입해 넣은 값을 받은 변수를 만듦]
+console.log(result); [add라는 값을 할당한 변수 result를 콘솔창에 띄우는 명령을 함]
+*/
+
+
+//함수를 인자로 전달
+/*
+function doSomethingTwo(add_inja) {
+    console.log(add_inja);
+    const result = add_inja(2, 3);
+    console.log(result);
+}
+
+function add_inja(a, b) {
+    const sum = a + b;
+    return sum;
+}
+
+doSomethingTwo(add_inja());
+*/
+
+/*
+264줄에 doSomethingTwo에 있는 인자 add_inja를 먼저 실행해서
+259줄에 있는 함수 add_inja가 먼저 실행되는데 a와 b는 숫자값이 아니라 문자열이라서 더할수가 없다.
+그리고 253의 doSomethingTwo의 add_inja라는 인자를 넣어 불러오는데
+255에 있는 result에 add_inja에 인자를 2와 3을 넣어 259가 실행이 되서 5의 값을 ruturn을 하고
+console.log(add_inja);라는 함수는 
+function add_inja(a, b) {
+    const sum = a + b;
+    return sum;
+}
+가 실행되고
+console.log(result);는 255 줄에서 받아온 값 5를 출력하게 된다.
+*/
