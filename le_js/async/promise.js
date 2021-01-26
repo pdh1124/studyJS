@@ -88,6 +88,9 @@ const cook = egg =>
 
 getHen()
 .then(hen => getEgg(hen))
+.catch(error => {
+    return '빵';
+})
 .then(egg => cook(egg))
 .then(meal => console.log(meal))
 .catch(console.log);
