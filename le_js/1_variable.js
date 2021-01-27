@@ -191,3 +191,18 @@ console.log(obj2);
 obj.nameObj = 'james'
 console.log(obj);
 console.log(obj2);
+
+
+const num1 = 1;
+const num2 = 2;
+const result_num = num1 + num2;
+
+const num3 = 1;
+const num4 = 2;
+const result_num2 = num3 + num4;
+
+function add_num(num1, num2) {
+    return num1 + num2;
+}
+
+const sum = add(3, 4);
