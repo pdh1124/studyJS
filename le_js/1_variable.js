@@ -168,3 +168,26 @@ text = '7' + 5;
 console.log(`value ${y}, type: ${typeof y}`); //type: string
 text = '8' / '2';
 console.log(`value ${y}, type: ${typeof y}`); //type: number 
+
+
+//변수 
+// primitive 타입 = number, string, boolean, null, undefined의 가장 작은 단위
+let number = 2;
+let num = '2';
+
+//Object 타입 = primitive 타입을 제외한 모든 타입
+//최소한 한두가지의 다양한 데이터를 한공간에다가 묶어놓은 타입
+let obj = {
+    //key: value
+    nameObj: 'ellie',
+    ageObj: 5,
+};
+
+console.log(obj);
+
+let obj2 = obj;
+console.log(obj2);
+
+obj.nameObj = 'james'
+console.log(obj);
+console.log(obj2);
